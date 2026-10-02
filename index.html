@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ziad Hossam | Cybersecurity Student & Aspiring SOC Analyst</title>
+<meta name="description" content="Portfolio of Ziad Hossam, Cybersecurity Student & Aspiring SOC Analyst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121212; --bg2:#1a1a1a; --card:#202020; --line:#2e2e2e;
+  --text:#f5f3ee; --muted:#a7a49c; --gold:#d4a843; --gold2:#f0cd7a;
+  --r:24px; --max:1120px;
+  --head:'Sora','Segoe UI',system-ui,sans-serif; --body:'Manrope','Segoe UI',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--text);font:400 1.02rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:110px 0}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;margin-bottom:18px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:48px}
+.gold{color:var(--gold)}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(18,18,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font:800 1.15rem var(--head);display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--gold);color:#111;display:grid;place-items:center;font:800 .95rem var(--head);font-style:normal}
+.links{display:flex;gap:6px;list-style:none}
+.links a{padding:8px 15px;border-radius:99px;color:var(--muted);font-weight:500;font-size:.93rem;transition:.2s}
+.links a:hover{color:var(--text);background:var(--card)}
+.links a.cta{background:var(--gold);color:#111;font-weight:600}
+#tg{display:none;background:none;border:1px solid var(--line);color:var(--text);width:42px;height:42px;border-radius:12px;font-size:1.2rem;cursor:pointer}
+
+/* BUTTONS */
+.btn{display:inline-block;padding:14px 28px;border-radius:99px;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer}
+.btn.pri{background:var(--gold);color:#111;border-color:var(--gold)}
+.btn.pri:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn.sec:hover{border-color:var(--gold);color:var(--gold)}
+.btn.sm{padding:10px 20px;font-size:.9rem}
+
+/* IMAGE PLACEHOLDERS: the <img> covers the dashed box; if the file is missing the box stays visible */
+.ph{position:relative;overflow:hidden;background:var(--bg2);border:1.5px dashed #4a4231;display:grid;place-items:center;text-align:center;color:var(--gold);font:600 .8rem var(--head);padding:12px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* HERO */
+#home{padding-top:150px;background:radial-gradient(900px 480px at 85% 10%,rgba(212,168,67,.13),transparent 60%)}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--bg2);padding:8px 16px;border-radius:99px;color:var(--muted);font-size:.88rem;margin-bottom:26px}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+h1{font-size:clamp(3.2rem,8.5vw,6.6rem);font-weight:800;line-height:.98}
+.role{font:700 clamp(1.1rem,2.4vw,1.5rem) var(--head);color:var(--gold);margin:22px 0 18px}
+.hero p.in{color:var(--muted);max-width:52ch;margin-bottom:34px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-img{aspect-ratio:4/5;border-radius:36px;width:100%;max-width:420px;margin-left:auto;box-shadow:0 0 0 10px var(--bg2),0 0 0 11px var(--line)}
+.hero>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero>*:nth-child(2){animation-delay:.15s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:#5a4a22}
+.grid{display:grid;gap:22px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.about .big{font:600 clamp(1.25rem,2.4vw,1.65rem)/1.5 var(--head);letter-spacing:-.01em}
+.edit{border:1.5px dashed #4a4231;background:transparent;color:var(--muted);display:flex;flex-direction:column;justify-content:center}
+.edit b{color:var(--gold);font-family:var(--head)}
+
+/* SKILLS */
+.skills{grid-template-columns:repeat(6,1fr)}
+.skills .card{grid-column:span 2}
+.skills .card:nth-child(4),.skills .card:nth-child(5){grid-column:span 3}
+.card h3{font-size:1.3rem;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:7px 14px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:.86rem;color:#ddd9cf}
+.chips span:hover{border-color:var(--gold);color:var(--gold2)}
+
+/* PROJECTS */
+.projects{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-6px)}
+.proj .ph{aspect-ratio:16/10;border:0;border-bottom:1.5px dashed #4a4231;border-radius:0}
+.pb{padding:28px;display:flex;flex-direction:column;gap:14px;flex:1}
+.tag{font-size:.82rem;color:var(--gold)}
+.pb h3{font-size:1.4rem}
+.pb p{color:var(--muted);font-size:.96rem}
+.pb h4{font:700 .95rem var(--head);margin-top:4px}
+.pb ul{list-style:none;display:grid;gap:6px;font-size:.93rem;color:#ddd9cf}
+.pb li{padding-left:20px;position:relative}
+.pb li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:2px;background:var(--gold)}
+.pb .btn{margin-top:auto;align-self:flex-start}
+.add{border:1.5px dashed #4a4231;background:transparent;min-height:260px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:30px}
+.add b{display:block;color:var(--gold);font:700 1.1rem var(--head);margin-bottom:6px}
+
+/* CERTIFICATES */
+.certs{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.cert{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.cert .ph{aspect-ratio:4/3;border:0;border-bottom:1.5px dashed #4a4231;border-radius:0}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:.92rem;margin:4px 0 6px}
+.meta dt{color:var(--muted)}
+.meta dd{color:var(--text)}
+.todo{color:var(--gold)}
+
+/* SOC */
+#soc{background:var(--bg2);border-block:1px solid var(--line)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:50px;position:relative}
+.step{text-align:center;padding:0 10px;position:relative}
+.step::after{content:"";position:absolute;top:34px;left:calc(50% + 40px);right:calc(-50% + 40px);height:2px;background:linear-gradient(90deg,var(--gold),#4a4231)}
+.step:last-child::after{display:none}
+.dot{width:68px;height:68px;margin:0 auto 18px;border-radius:50%;background:var(--card);border:2px solid var(--gold);display:grid;place-items:center;font:800 1.2rem var(--head);color:var(--gold);transition:.25s}
+.step:hover .dot{background:var(--gold);color:#111}
+.step b{font:700 .95rem var(--head);letter-spacing:.04em}
+.step small{display:block;color:var(--muted);font-size:.84rem;margin-top:4px}
+
+/* CONTACT */
+.contact{grid-template-columns:repeat(3,1fr)}
+.cc{display:flex;flex-direction:column;gap:6px;min-height:170px;justify-content:flex-end}
+.cc:hover{transform:translateY(-6px);background:#262626}
+.cc small{color:var(--muted)}
+.cc b{font:700 1.15rem var(--head);word-break:break-word}
+.cc span{color:var(--gold);font-weight:600;font-size:.92rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:44px 0;text-align:center;color:var(--muted)}
+footer strong{display:block;color:var(--text);font:800 1.3rem var(--head)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  section{padding:80px 0}
+  .hero,.about{grid-template-columns:1fr}
+  .hero-img{margin:0;max-width:340px}
+  .skills{grid-template-columns:1fr 1fr}.skills .card,.skills .card:nth-child(n){grid-column:auto}
+  .contact{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr;gap:26px;text-align:left}
+  .step{display:flex;align-items:center;gap:18px;text-align:left;padding:0}
+  .dot{margin:0;flex:none}.step::after{display:none}
+  #tg{display:block}
+  .links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;padding:14px 24px 22px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+}
+@media(max-width:560px){.skills{grid-template-columns:1fr}.projects,.certs{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav">
+    <a href="#home" class="logo"><i>ZH</i>Ziad Hossam</a>
+    <button id="tg" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="links" id="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact" class="cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section id="home">
+  <div class="wrap hero">
+    <div>
+      <div class="pill">Open to SOC Analyst opportunities</div>
+      <h1>Ziad<br>Hossam</h1>
+      <p class="role">Cybersecurity Student &amp; Aspiring SOC Analyst</p>
+      <p class="in">I study network engineering and security operations, with hands-on practice in traffic analysis, threat detection and Python automation.</p>
+      <div class="btns">
+        <a href="#projects" class="btn pri">View Projects</a>
+        <a href="#contact" class="btn sec">Contact Me</a>
+      </div>
+    </div>
+    <!-- ✏️ EDIT: [PERSON IMAGE HERE] — save your photo as images/person.jpg (4:5 ratio works best) -->
+    <div class="ph hero-img">
+      [PERSON IMAGE HERE]
+      <img src="WhatsApp Image 2026-10-02 at 10.08.19 PM.jpeg" alt="Portrait of Ziad Hossam" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<!--
+  ABOUT SECTION REDESIGN: drop-in patch. Nothing else in your page changes.
+
+  STEP 1. In your <style>, delete the old block that starts with "/* ABOUT */"
+          (the .about, .about .big, .edit and .edit b rules) and paste PART 1 there.
+  STEP 2. Replace your whole <section id="about"> ... </section> with PART 2.
+-->
+
+
+<!-- ===================== PART 1: CSS ===================== -->
+<style>
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.about-main{position:relative;padding:48px 48px 48px 56px;border-radius:32px;background:linear-gradient(160deg,#252525,#191919);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.about-main::before{content:"";position:absolute;left:0;top:48px;bottom:48px;width:5px;border-radius:0 5px 5px 0;background:var(--gold)}
+.about-main::after{content:"";position:absolute;right:-90px;bottom:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.16),transparent 70%);pointer-events:none}
+.about .big{font:700 clamp(1.5rem,3vw,2.2rem)/1.28 var(--head);letter-spacing:-.02em}
+.about .rest{color:var(--muted);margin-top:24px;max-width:56ch}
+.about .btns{margin-top:34px;position:relative;z-index:1}
+
+.focus{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:stretch}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s}
+.fc:hover{border-color:#5a4a22;transform:translateY(-4px)}
+.fc svg{width:42px;height:42px;padding:10px;border-radius:14px;background:rgba(212,168,67,.12);color:var(--gold);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fc b{font:700 1.02rem/1.25 var(--head)}
+.fc small{display:block;color:var(--muted);font-size:.84rem;margin-top:3px}
+.fc.cert{grid-column:1/-1;flex-direction:row;align-items:center;background:var(--gold);border-color:var(--gold);color:#111}
+.fc.cert svg{background:rgba(17,17,17,.12);color:#111}
+.fc.cert small{color:rgba(17,17,17,.7)}
+.fc.cert:hover{background:var(--gold2)}
+
+/* Optional extra-info card (used by the commented block in the HTML) */
+.edit{border:1.5px dashed #4a4231;background:transparent;color:var(--muted);display:flex;flex-direction:column;justify-content:center}
+.edit b{color:var(--gold);font-family:var(--head)}
+
+@media(max-width:900px){
+  .about{grid-template-columns:1fr}
+  .about-main{padding:36px 28px 36px 36px}
+  .about-main::before{top:36px;bottom:36px}
+}
+@media(max-width:480px){.focus{grid-template-columns:1fr}}
+</style>
+
+
+<!-- ===================== PART 2: HTML ===================== -->
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+
+      <!-- Main statement (your exact text, split into a headline sentence + supporting copy) -->
+      <div class="about-main">
+        <p class="big">Motivated and detail-oriented Cybersecurity Student with a strong foundation in Network Engineering and Security Operations.</p>
+        <p class="rest">Certified Cisco CyberOps Associate with hands-on experience in network design, traffic analysis, and threat detection. Passionate about Python automation and becoming a professional SOC Analyst.</p>
+        <div class="btns">
+          <!-- <a href="#projects" class="btn pri sm">View Projects</a>
+          <a href="#contact" class="btn sec sm">Contact Me</a> -->
+        </div>
+      </div>
+
+      <!-- Focus tiles: every label comes from your about text -->
+      <div class="focus">
+        <div class="fc">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.5 5.5M12 11.5l5.5 5.5"/></svg>
+          <div><b>Network Engineering</b><small>Network design</small></div>
+        </div>
+        <div class="fc">
+          <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><b>Security Operations</b><small>Threat detection</small></div>
+        </div>
+        <div class="fc">
+          <svg viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12 2.5-6H21"/></svg>
+          <div><b>Traffic Analysis</b><small>Hands-on experience</small></div>
+        </div>
+        <div class="fc">
+          <svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></svg>
+          <div><b>Python Automation</b><small>Passion area</small></div>
+        </div>
+        <div class="fc cert">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+          <div><b>Certified Cisco CyberOps Associate</b><small>Goal: professional SOC Analyst</small></div>
+        </div>
+      </div>
+
+      <!-- ✏️ EDIT: [ADDITIONAL ABOUT INFORMATION HERE]
+           To use it, remove the comment markers. It spans the full width under the two columns.
+      <div class="card edit" style="grid-column:1/-1">
+        <b>[ADDITIONAL ABOUT INFORMATION HERE]</b>
+        <p>Add education, goals or interests.</p>
+      </div>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="lead">The tools and fundamentals I use to build, monitor and defend networks.</p>
+    <div class="grid skills">
+      <div class="card"><h3>Network</h3><div class="chips"><span>Cisco Packet Tracer</span><span>VLANs</span><span>Inter-VLAN Routing</span><span>Static Routing</span><span>DHCP</span><span>Subnetting</span><span>Multi-router Topologies</span></div></div>
+      <div class="card"><h3>Cybersecurity</h3><div class="chips"><span>CyberOps</span><span>Network Security Monitoring</span><span>Traffic Analysis</span><span>Threat Detection</span><span>Vulnerability Assessment</span></div></div>
+      <div class="card"><h3>Tools</h3><div class="chips"><span>Wireshark</span><span>TShark</span><span>Kali Linux</span><span>PortSwigger Web Security Academy</span></div></div>
+      <div class="card"><h3>Programming</h3><div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>OpenCV</span><span>Streamlit</span><span>PyQt</span></div></div>
+      <div class="card"><h3>Core</h3><div class="chips"><span>Problem Solving</span><span>Network Troubleshooting</span><span>Incident Analysis</span><span>Team Collaboration</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" style="background:var(--bg2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="lead">Network design, security monitoring and automation work.</p>
+    <div class="grid projects">
+
+      <!-- PROJECT 1 -->
+      <article class="card proj">
+        <!-- ✏️ EDIT: [PROJECT IMAGE HERE] → images/project-1.jpg -->
+        <div class="ph">[PROJECT IMAGE HERE]<img src="network.jpeg" alt="Enterprise Multi-Router Network Topology" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3>Enterprise Multi-Router Network Topology</h3>
+          <p>Designed, configured and troubleshot a multi-router enterprise network.</p>
+          <h4>Key achievements</h4>
+          <ul><li>VLANs</li><li>Inter-VLAN routing</li><li>Static routing</li><li>DHCP</li><li>Troubleshooting</li></ul>
+          <div class="chips"><span>Cisco Packet Tracer</span><span>TCP/IP</span><span>VLAN</span><span>DHCP</span></div>
+          <!-- ✏️ EDIT: [PROJECT LINK HERE] -->
+          <a href="full network.jpeg" class="btn pri sm" target="_blank" rel="noopener">Full project</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="card proj">
+        <!-- ✏️ EDIT: [PROJECT IMAGE HERE] → images/project-2.jpg -->
+        <div class="ph">[PROJECT IMAGE HERE]<img src="network sec.jpg" alt="Network Security & Monitoring Simulation" onerror="this.remove()"></div>
+        <div class="pb">
+          <span class="tag">NTI Training</span>
+          <h3>Network Security &amp; Monitoring Simulation</h3>
+          <p>Practiced security operations and incident detection.</p>
+          <h4>Key achievements</h4>
+          <ul><li>Traffic analysis</li><li>Suspicious packet inspection</li><li>Defensive monitoring and hardening</li></ul>
+          <div class="chips"><span>Wireshark</span><span>TShark</span><span>Kali Linux</span><span>Cisco CyberOps</span></div>
+          <!-- ✏️ EDIT: [PROJECT LINK HERE] -->
+          <!-- <a href="#" class="btn pri sm" target="_blank" rel="noopener">GitHub / Live Demo [PROJECT LINK HERE]</a> -->
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="card proj">
+        <!-- ✏️ EDIT: [PROJECT IMAGE HERE] → images/project-3.jpg -->
+        <div class="ph">[PROJECT IMAGE HERE]<img src="data.jpg" alt="Python Automation & Data Utilities" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3>Python Automation &amp; Data Utilities</h3>
+          <p>Built Python automation scripts and GUI/data-processing utilities.</p>
+          <h4>Key achievements</h4>
+          <ul><li class="todo">[ADD KEY ACHIEVEMENTS HERE]</li></ul>
+          <div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>PyQt</span><span>Streamlit</span></div>
+          <!-- ✏️ EDIT: [PROJECT LINK HERE] -->
+          <!-- <a href="#" class="btn pri sm" target="_blank" rel="noopener">GitHub / Live Demo [PROJECT LINK HERE]</a> -->
+        </div>
+      </article>
+
+      <!-- ✏️ ADD PROJECT: copy this whole block, remove the comment markers, paste it above this line, then edit.
+      <article class="card proj">
+        <div class="ph">[PROJECT IMAGE HERE]<img src="images/project-4.jpg" alt="Project title" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3>Project title</h3>
+          <p>[PROJECT DETAILS HERE]</p>
+          <h4>Key achievements</h4>
+          <ul><li>Achievement</li></ul>
+          <div class="chips"><span>Tech</span></div>
+          <a href="[PROJECT LINK HERE]" class="btn pri sm" target="_blank" rel="noopener">GitHub / Live Demo</a>
+        </div>
+      </article>
+      -->
+      <!-- <div class="card add"><div><b>[ADD PROJECT HERE]</b>[PROJECT IMAGE HERE]<br>[PROJECT DETAILS HERE]<br><small>See the template comment in the code.</small></div></div> -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <p class="lead">Verified credentials and training. Fields in gold are waiting for your real details.</p>
+    <div class="grid certs">
+
+      <!-- CERT 1 -->
+      <article class="card cert">
+        <!-- ✏️ EDIT: [CERTIFICATE IMAGE HERE] → images/cert-cisco-cyberops.jpg -->
+        <div class="ph">[INSERT CERTIFICATE IMAGE HERE]<img src="cisco.png" alt="Cisco CyberOps Associate certificate" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3>Cisco CyberOps Associate</h3>
+          <dl class="meta">
+            <dt>Issuer</dt><dd>Cisco</dd>
+            <dt>Date</dt><dd class="todo">30 Sep 2026</dd>
+            <dt>Credential ID</dt><dd class="todo">: 849f50dc-1a8a-414d-b624-2023a62e6e00</dd>
+          </dl>
+          <p class="todo">offered by National Telecommunication Institute
+through the Cisco Networking Academy program.</p>
+          <a href="cisco.png" class="btn pri sm" target="_blank" rel="noopener">Verify / View Certificate</a>
+        </div>
+      </article>
+
+      <!-- CERT 2 -->
+      <article class="card cert">
+        <!-- ✏️ EDIT: [CERTIFICATE IMAGE HERE] → images/cert-nti.jpg -->
+        <div class="ph">[INSERT CERTIFICATE IMAGE HERE]<img src="nti.png" alt="NTI training certificate" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3>NTI Cybersecurity / Network Security Training</h3>
+          <dl class="meta">
+            <dt>Issuer</dt><dd>NTI</dd>
+            <dt>Date</dt><dd class="todo">From 09 August to 03 September 2026
+</dd>
+            <dt>Credential ID</dt><dd class="todo"> 318763</dd>
+          </dl>
+          <!-- <p class="todo">[ADD DESCRIPTION HERE]</p> -->
+          <a href="nti.png" class="btn pri sm" target="_blank" rel="noopener">Verify / View Certificate</a>
+        </div>
+      </article>
+
+      <!-- ✏️ ADD CERTIFICATE: copy this block, remove the comment markers, paste it above this line. Add as many as you like.
+      <article class="card cert">
+        <div class="ph">[INSERT CERTIFICATE IMAGE HERE]<img src="images/cert-new.jpg" alt="Certificate name" onerror="this.remove()"></div>
+        <div class="pb">
+          <h3>Certificate name</h3>
+          <dl class="meta"><dt>Issuer</dt><dd>Issuer</dd><dt>Date</dt><dd>Date</dd><dt>Credential ID</dt><dd>ID</dd></dl>
+          <p>Description</p>
+          <a href="[CERTIFICATE LINK HERE]" class="btn pri sm" target="_blank" rel="noopener">Verify / View Certificate</a>
+        </div>
+      </article>
+      -->
+      <!-- <div class="card add"><div><b>[ADD CERTIFICATE HERE]</b>Copy the template comment in the code to add unlimited certificates.</div></div> -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOC FOCUS ============ -->
+<section id="soc">
+  <div class="wrap">
+    <h2>SOC focus</h2>
+    <p class="lead" style="margin-bottom:0">Developing practical skills in Security Operations, Network Security Monitoring, Traffic Analysis, Threat Detection and Incident Analysis.</p>
+    <div class="flow">
+      <div class="step"><div class="dot">1</div><div><b>MONITOR</b></div></div>
+      <div class="step"><div class="dot">2</div><div><b>ANALYZE</b></div></div>
+      <div class="step"><div class="dot">3</div><div><b>DETECT</b></div></div>
+      <div class="step"><div class="dot">4</div><div><b>INVESTIGATE</b></div></div>
+      <div class="step"><div class="dot">5</div><div><b>RESPOND</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Let's connect</h2>
+    <p class="lead">Open to conversations about SOC roles, internships and security projects.</p>
+    <div class="grid contact">
+      <a class="card cc" href="mailto:zyadhossam500@gmail.com"><small>Email</small><b>zyadhossam500@gmail.com</b><span>Send an email</span></a>
+      <a class="card cc" href="https://www.linkedin.com/in/zyad-hossam" target="_blank" rel="noopener"><small>LinkedIn</small><b>zyad-hossam</b><span>View profile</span></a>
+      <a class="card cc" href="https://github.com/zyadhossam500" target="_blank" rel="noopener"><small>GitHub</small><b>zyadhossam500</b><span>View repositories</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Ziad Hossam</strong>
+    Cybersecurity Student &amp; Aspiring SOC Analyst
+    <p style="margin-top:14px;font-size:.88rem">© 2026</p>
+  </div>
+</footer>
+
+<script>
+const tg=document.getElementById('tg'),links=document.getElementById('links');
+tg.addEventListener('click',()=>{const o=links.classList.toggle('open');tg.setAttribute('aria-expanded',o)});
+links.addEventListener('click',e=>{if(e.target.tagName==='A'){links.classList.remove('open');tg.setAttribute('aria-expanded',false)}});
+</script>
+</body>
+</html>
